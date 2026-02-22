@@ -4,3 +4,38 @@
     font-family: "Geist", sans-serif;
   font-optical-sizing: auto;
 }
+.nojob_sec{
+    display: none;
+}
+.selected{
+    background-color:#3B82F6;
+    color: #fff;
+}
+.badge.badge-soft.badge-primary.py-4.text-\[\#002C5C\].rounded-sm.my-3.custom_badge_primary {
+    background: #00d3bb;
+    color: #fff;
+    border-color: #fff;
+}
+.badge.badge-soft.badge-primary.py-4.text-\[\#002C5C\].rounded-sm.my-3.custom_badge_rejected {
+    background: #ff637d;
+    color: #fff;
+    border-color: #fff;
+}
+.card.interview {
+    border-left: 2px solid #00d3bb;
+}
+.card.rejected {
+    border-left: 2px solid #ff637d !important;
+}
+@media screen and (max-width:600px) {
+   .flexfixiner{
+    flex-direction: column;
+   }
+    .flexfixiner div{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+   }
+    
+}

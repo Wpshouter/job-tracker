@@ -14,48 +14,57 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    <script src="./js/jobs.js"></script>
+    <script src="./js/functions.js"></script>
   </head>
   <body class="bg-base-200">
-        <section class="max-w-7/12 mx-auto py-10">   
-            <h2 class="text-3xl font-bold text-[#002C5C]">Job Application Tracker</h2>
-            <div class="my-6 flex flex-row gap-[15px]">
-                <div class="bg-[#fff] p-6 rounded border border-gray-100 w-4/12">
-                    <p>Total</p>
-                    <p class="font-bold text-2xl text-[#002C5C]">8</p>
-                </div>
-                <div class="bg-[#fff] p-6 rounded border border-gray-100 w-4/12">
-                    <p>Interview     </p>
-                    <p class="font-bold text-2xl text-success">0</p>
-                </div>
-                <div class="bg-[#fff] p-6 rounded border border-gray-100 w-4/12">
-                    <p>Rejected</p>
-                    <p class="font-bold text-2xl text-error">0</p>
-                </div>
-            </div>
-            <div class="w-full border-b-2 border-[#E6E7E9]"></div>
-        </section>
-        <section class="job_section max-w-7/12 mx-auto my-2">
-              <h2 class="text-3xl font-bold text-[#002C5C] mb-8">Available Jobs</h2>
-              <div class="flex gap-3 mb-4">
-                    <button class="btn min-w-[80px]  bg-white text-[#64748B]">All</button>
-                    <button class="btn min-w-[80px] bg-white text-[#64748B]">Interview</button>
-                    <button class="btn min-w-[80px] bg-white text-[#64748B]">Rejected</button>
-              </div>
-        </section>
-        <section class="bg-white border border-gray-200 rounded-xl p-10 max-w-7/12 mx-auto ">
-            <div id="job-container">
+    <section class="max-w-10/12 mx-auto py-10">
+      <h2 class="text-3xl font-bold text-[#002C5C]">Job Application Tracker</h2>
+      <div class="my-6 flex flex-row gap-[15px] flexfixiner">
+        <div class="bg-[#fff] p-6 rounded border border-gray-100 w-4/12">
+          <p>Total</p>
+          <p class="font-bold text-2xl text-[#002C5C]" id="total_count_h">8</p>
+        </div>
+        <div class="bg-[#fff] p-6 rounded border border-gray-100 w-4/12">
+          <p>Interview</p>
+          <p class="font-bold text-2xl text-success" id="interview_count">0</p>
+        </div>
+        <div class="bg-[#fff] p-6 rounded border border-gray-100 w-4/12">
+          <p>Rejected</p>
+          <p class="font-bold text-2xl text-error" id="reject_count" >0</p>
+        </div>
+      </div>
+      <div class="w-full border-b-2 border-[#E6E7E9]"></div>
+    </section>
+    <section class="job_section max-w-10/12 mx-auto my-2">
+      <div class="flex justify-between">
+        <h2 class="text-3xl font-bold text-[#002C5C] mb-8">Available Jobs</h2>
+        <p class="text-[#64748B]"><span id="job-count">8</span> jobs</p>
+      </div>
 
-            </div>
-            <div class="nojob_sec flex flex-col w-full justify-center items-center py-10">
-                <img src="./jobs.png" />
-                <h2 class="text-3xl text-[#002C5C] font-bold" >No jobs available</h2>
-                <p class="text-[#64748B]">Check back soon for new job opportunities</p>
-            </div>
-        </section>
+      <div class="flex gap-3 mb-4">
+        <button id="show_all" class="btn selected primary min-w-[80px] bg-white text-[#64748B]">All</button>
+        <button id="show_interview" class="btn min-w-[80px] bg-white text-[#64748B]">
+          Interview
+        </button>
+        <button id="show_rejected" class="btn min-w-[80px] bg-white text-[#64748B]">
+          Rejected
+        </button>
+      </div>
+    </section>
+    <section class="pb-10">
+      <div id="job-container">
+        
+      </div>
+      <div
+        class="nojob_sec text-center flex flex-col w-full justify-center items-center py-10 bg-white border border-gray-200 rounded-xl p-10 max-w-10/12 mx-auto"
+      >
+        <img src="./jobs.png" />
+        <h2 class="text-2xl text-[#002C5C] font-bold">No jobs available</h2>
+        <p class="text-[#64748B]">Check back soon for new job opportunities</p>
+      </div>
+    </section>
   </body>
 </html>
