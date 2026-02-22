@@ -132,7 +132,7 @@ function render_job_html_peraless(jobarray) {
     container.appendChild(card);
   }
 }
-console.log(jobarray);
+// console.log(jobarray);
 document.addEventListener("DOMContentLoaded", function () {
   render_job_html_peraless(jobarray);
 
