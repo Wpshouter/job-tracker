@@ -21,7 +21,7 @@ function update_ireject_container(count, minus = false) {
   interview_countelement.innerText = newss;
 }
 function update_second_counder(found){
-  console.log('sss');
+  //console.log('sss');
    const countElementHeaer = document.getElementById("total_count_h");
     const countElementBody = document.getElementById("job-count");
     const current = parseInt(countElementHeaer.innerText);

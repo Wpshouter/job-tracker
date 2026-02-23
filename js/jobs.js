@@ -129,6 +129,7 @@ function render_job_html_peraless(jobarray) {
     });
     card.querySelector(".delete_btn").addEventListener("click", function () {
       delete_A_card(card);
+       document.querySelector(".btn.selected").click();
     });
     // Append to container
     container.appendChild(card);
