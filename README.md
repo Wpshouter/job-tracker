@@ -16,7 +16,7 @@
 ### 4. What is Event Delegation in JavaScript? Why is it useful?
 	It is technique to attach event on parent element then desice by code which child element is clicked.
 ### 5. What is the difference between preventDefault() and stopPropagation() methods?
-	preventDefault we use this to stop default behaviour of an elment. It is to dsiable browser default action event for that element. 
+	preventDefault we use this to stop default behaviour of an elment. It is to disable browser default action event for that element. 
 	stopPropagation is used to stop Event Bubbling.
 
 

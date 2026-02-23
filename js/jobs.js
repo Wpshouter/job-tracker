@@ -82,7 +82,7 @@ function render_job_html_peraless(jobarray) {
     // Create card element
     let card = document.createElement("div");
     card.className =
-      "card bg-white border border-gray-200 rounded-xl p-10 max-w-10/12 mx-auto mb-4 cardlessperaless";
+      "card bg-white border border-gray-200 rounded-xl p-6 max-w-10/12 mx-auto mb-4 cardlessperaless";
     card.id = `card-${job.id}`;
     card.setAttribute("data-job-id", job.id);
     card.innerHTML = `
@@ -108,26 +108,28 @@ function render_job_html_peraless(jobarray) {
     card.querySelector(".interview-btn").addEventListener("click", function () {
       if (!card.classList.contains("interview")) {
         card.classList.add("interview");
-        if(card.classList.contains("rejected")){
-                 card.classList.remove("rejected");
+        if (card.classList.contains("rejected")) {
+          card.classList.remove("rejected");
         }
       }
-      update_card_label(card, 'INTERVIEW');
+      update_card_label(card, "INTERVIEW");
       update_interview_container(1);
+      document.querySelector(".btn.selected").click();
     });
     card.querySelector(".reject-btn").addEventListener("click", function () {
       if (!card.classList.contains("rejected")) {
         card.classList.add("rejected");
-        if(card.classList.contains("interview")){
-                 card.classList.remove("interview");
+        if (card.classList.contains("interview")) {
+          card.classList.remove("interview");
         }
       }
-       update_card_label(card, 'REJECTED');
+      update_card_label(card, "REJECTED");
       update_ireject_container(1);
+      document.querySelector(".btn.selected").click();
     });
-        card.querySelector(".delete_btn").addEventListener('click', function(){
-            delete_A_card(card);
-    })
+    card.querySelector(".delete_btn").addEventListener("click", function () {
+      delete_A_card(card);
+    });
     // Append to container
     container.appendChild(card);
   }
@@ -155,6 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       noJobSec.style.display = "none";
     }
+    update_second_counder(found);
     document.querySelector("button.selected").classList.remove("selected");
     this.classList.add("selected");
   });
@@ -167,8 +170,12 @@ document.addEventListener("DOMContentLoaded", function () {
       card.style.display = "block";
     });
     noJobSec.style.display = "none";
-       document.querySelector("button.selected").classList.remove("selected");
-        this.classList.add("selected");
+    const countElementHeaer = document.getElementById("total_count_h");
+    const countElementBody = document.getElementById("job-count");
+    const current = parseInt(countElementHeaer.innerText);
+    countElementBody.innerText = current;
+    document.querySelector("button.selected").classList.remove("selected");
+    this.classList.add("selected");
   });
 
   //button rejected
@@ -189,8 +196,10 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       noJobSec.style.display = "none";
     }
+      update_second_counder(found);
     document.querySelector("button.selected").classList.remove("selected");
     this.classList.add("selected");
+  
   });
 
   //button interview action
